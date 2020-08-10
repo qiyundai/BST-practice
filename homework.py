@@ -44,7 +44,7 @@ class BST:
         if val == self.root.val:
             return self.root
         else:
-            bst._find_val(self.root, val)
+            self._find_val(self.root, val)
     
     def _find_val(self, cur_node, val):
         if cur_node.val != None:
@@ -56,31 +56,3 @@ class BST:
                 self._find_val(cur_node.right, val)
         else:
             return None
-
-    def add_node(self, val):
-        pass
-
-
-n1 = Node(1)
-n3 = Node(3)
-n4 = Node(4)
-n6 = Node(6)
-n7 = Node(7)
-n8 = Node(8)
-n10 = Node(10)
-n13 = Node(13)
-n14 = Node(14)
-
-n8.left = n3
-n8.right = n10
-n3.left = n1
-n3.right = n6
-n6.left = n4
-n6.right = n7
-n8.right = n10
-n10.right = n14
-n14.left = n13
-
-bst = BST(n8)
-
-bst.print_tree()
