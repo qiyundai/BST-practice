@@ -44,15 +44,15 @@ class BST:
         if val == self.root.val:
             return self.root
         else:
-            self._find_val(self.root, val)
+            return self._find_val(self.root, val)
     
     def _find_val(self, cur_node, val):
         if cur_node.val != None:
             if cur_node.val == val:
                 return cur_node
             if cur_node.val > val:
-                self._find_val(cur_node.left, val)
+                return self._find_val(cur_node.left, val)
             if cur_node.val < val:
-                self._find_val(cur_node.right, val)
+                return self._find_val(cur_node.right, val)
         else:
             return None

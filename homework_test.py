@@ -21,8 +21,21 @@ n8.right = n10
 n10.right = n14
 n14.left = n13
 
-bst = BST(n8)
+@pytest.fixture
+def bsttest():
+    return BST(n8)   
+
+@pytest.fixture
+def emptytree():
+    return BST()
 
 def test_find_val():
-    assert bst.find_val(8) == n8
-    assert bst.find_val(3) == n3
+    assert bsttest.find_val(8) == 8
+    assert bsttest.find_val(3) == 3
+
+def test_insert_val(val):
+    bsttest.insert_val(17)
+    assert bsttest.find_val(17) == n14.right
+
+def test_print_tree():
+    assert bsttest.print_tree != None
